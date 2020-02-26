@@ -24,6 +24,12 @@ where
      npos.ngo_list.`email` = "";
 
 
+
+
+-- count before and  insertion--
+select count(*) from npo_second.npos;
+
+
 -- --insertion into npos table
 insert into
     npo_second.npos(
@@ -49,11 +55,13 @@ from
 
 
 
+-- count before and  insertion--
+select count(*) from npo_second.users;
+
 -- insertion into users table
  
-
 insert into
-    npo_second.users(name, email, phone, location, pincode)
+    npo_second.users (name, email, phone, location, pincode)
 select
     npos.ngo_list.`contact_person`,
     npos.ngo_list.`email`,
@@ -81,6 +89,9 @@ where
 
 
 
+
+-- count before and  insertion--
+select count(*) from npo_second.npo_meta;
 -- --insertion into npo_meta table
 insert into
     npo_second.npo_meta(
